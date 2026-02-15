@@ -28,26 +28,31 @@ paths:
 ## 3. Domain Correctness
 
 <!-- Customize for your field's known pitfalls -->
-- Verify estimator implementations match slide formulas
+- Verify statistical test implementations match slide formulas
 - Check known package bugs (document below in Common Pitfalls)
+- Likert data: explicitly decide ordinal vs. interval treatment and document rationale
+- Chi-square: verify expected frequency ≥ 5 before using `chisq.test()`; use `fisher.test()` otherwise
+- ANOVA: check for balanced designs; use `car::Anova(..., type = "III")` for unbalanced
+- Web scraping: always set `encoding = "UTF-8"` for Chinese content
+- Sentiment analysis: use `jiebaR` for Chinese tokenization; separate languages before scoring
 
 ## 4. Visual Identity
 
 ```r
-# --- Your institutional palette ---
-primary_blue  <- "#012169"
-primary_gold  <- "#f2a900"
-accent_gray   <- "#525252"
+# --- CUHK institutional palette ---
+cuhk_purple    <- "#6B2D8B"
+cuhk_gold      <- "#EDAB56"
+dark_gray      <- "#3D3D3D"
 positive_green <- "#15803d"
-negative_red  <- "#b91c1c"
+negative_red   <- "#b91c1c"
 ```
 
 ### Custom Theme
 ```r
-theme_custom <- function(base_size = 14) {
+theme_cuhk <- function(base_size = 14) {
   theme_minimal(base_size = base_size) +
     theme(
-      plot.title = element_text(face = "bold", color = primary_blue),
+      plot.title = element_text(face = "bold", color = cuhk_purple),
       legend.position = "bottom"
     )
 }
@@ -73,6 +78,12 @@ saveRDS(result, file.path(out_dir, "descriptive_name.rds"))
 |---------|--------|------------|
 | Missing `bg = "transparent"` | White boxes on slides | Always include in ggsave() |
 | Hardcoded paths | Breaks on other machines | Use relative paths |
+| `chisq.test()` with expected count < 5 | Invalid test results | Check with `chisq.test(x)$expected`; use `fisher.test()` |
+| Likert as numeric without `factor()` | Wrong analysis | Use `factor(..., ordered = TRUE)` |
+| `aov()` with unbalanced groups | Biased F-test | Use `car::Anova(..., type = "III")` |
+| `read_html()` without encoding | Garbled Chinese text | Set `encoding = "UTF-8"` |
+| `tidytext` for Chinese text | No/wrong tokens | Use `jiebaR` for segmentation |
+| Mixed-language sentiment | Wrong scores | Separate languages first |
 
 ## 7. Line Length & Mathematical Exceptions
 
