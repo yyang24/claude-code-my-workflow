@@ -17,8 +17,16 @@ When you modify a Beamer `.tex` file, you MUST also apply the equivalent change 
 <!-- Customize this table for your lectures -->
 | Lecture | Beamer | Quarto |
 |---------|--------|--------|
-| 1 | `Slides/Lecture1_Topic.tex` | `Quarto/Lecture1_Topic.qmd` |
-| 2 | `Slides/Lecture2_Topic.tex` | `Quarto/Lecture2_Topic.qmd` |
+| 1 | `Slides/Lecture01_Intro_Problem.tex` | `Quarto/Lecture01_Intro_Problem.qmd` |
+| 2 | `Slides/Lecture02_Product_Dev.tex` | `Quarto/Lecture02_Product_Dev.qmd` |
+| 3 | `Slides/Lecture03_Concept_Test.tex` | `Quarto/Lecture03_Concept_Test.qmd` |
+| 4 | `Slides/Lecture04_Exploratory_Design.tex` | `Quarto/Lecture04_Exploratory_Design.qmd` |
+| 5 | `Slides/Lecture05_Descriptive_Scaling.tex` | `Quarto/Lecture05_Descriptive_Scaling.qmd` |
+| 6 | `Slides/Lecture06_Questionnaire.tex` | `Quarto/Lecture06_Questionnaire.qmd` |
+| 7 | `Slides/Lecture07_Hypothesis_ANOVA.tex` | `Quarto/Lecture07_Hypothesis_ANOVA.qmd` |
+| 8 | `Slides/Lecture08_Regression_Sampling.tex` | `Quarto/Lecture08_Regression_Sampling.qmd` |
+| 9 | `Slides/Lecture09_Fieldwork_Report.tex` | `Quarto/Lecture09_Fieldwork_Report.qmd` |
+| 10 | `Slides/Lecture10_Experimentation_Market.tex` | `Quarto/Lecture10_Experimentation_Market.qmd` |
 <!-- Add rows as you create lectures -->
 
 ## Workflow (Every Time)
@@ -33,14 +41,18 @@ When you modify a Beamer `.tex` file, you MUST also apply the equivalent change 
 
 | Beamer | Quarto Equivalent |
 | ------ | ----------------- |
-| `\muted{text}` | `[text]{style="color: #525252;"}` |
-| `\key{text}` | `[**text**]{.emorygold}` |
+| `\textbf{text}` | `**text**` |
+| `\textit{text}` | `*text*` |
+| `\textcolor{red}{text}` | `[text]{style="color: red;"}` |
 | `\textcolor{positive}{text}` | `[text]{.positive}` |
 | `\textcolor{negative}{text}` | `[text]{.negative}` |
 | `\item text` | `- text` |
-| `\begin{highlightbox}` | `::: {.highlightbox}` |
-| `\begin{methodbox}` | `::: {.methodbox}` |
+| `\begin{block}{Title}` | `::: {.callout-note title="Title"}` |
+| `\begin{alertblock}{Title}` | `::: {.callout-warning title="Title"}` |
+| `\begin{exampleblock}{Title}` | `::: {.callout-tip title="Title"}` |
 | `$formula$` | `$formula$` (same) |
+| `\begin{columns}` | `:::: {.columns}` |
+| `\begin{column}{0.5\textwidth}` | `::: {.column width="50%"}` |
 
 ## When NOT to Sync
 

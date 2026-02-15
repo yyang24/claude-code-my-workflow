@@ -5,8 +5,8 @@
      Keep this file under ~150 lines — Claude loads it every session.
      See the guide at docs/workflow-guide.html for full documentation. -->
 
-**Project:** [YOUR PROJECT NAME]
-**Institution:** [YOUR INSTITUTION]
+**Project:** MKTG5012 Marketing Research
+**Institution:** The Chinese University of Hong Kong (CUHK)
 **Branch:** main
 
 ---
@@ -24,7 +24,7 @@
 ## Folder Structure
 
 ```
-[YOUR-PROJECT]/
+MKTG5012/
 ├── CLAUDE.MD                    # This file
 ├── .claude/                     # Rules, skills, agents, hooks
 ├── Bibliography_base.bib        # Centralized bibliography
@@ -96,32 +96,27 @@ python scripts/quality_score.py Quarto/file.qmd
 
 ---
 
-<!-- CUSTOMIZE: Replace the example entries below with your own
-     Beamer environments and Quarto CSS classes. These are examples
-     from the original project — delete them and add yours. -->
-
 ## Beamer Custom Environments
 
-| Environment       | Effect        | Use Case       |
-|-------------------|---------------|----------------|
-| `[your-env]`      | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `keybox` | Gold background box | Key points |
-| `highlightbox` | Gold left-accent box | Highlights |
-| `definitionbox[Title]` | Blue-bordered titled box | Formal definitions |
--->
+| Environment | Effect | Use Case |
+|-------------|--------|----------|
+| `block{Title}` | Standard titled block | Grouping related content |
+| `alertblock{Title}` | Red/alert-colored block | Warnings, caveats, key results |
+| `exampleblock{Title}` | Green-tinted block | Examples, case studies |
+| `itemize` / `enumerate` | Bulleted / numbered lists | Standard content |
+| `columns` + `column` | Side-by-side layout | Figures beside text |
+| `tikzpicture` | TikZ diagrams | Flowcharts, visual models |
 
 ## Quarto CSS Classes
 
-| Class              | Effect        | Use Case       |
-|--------------------|---------------|----------------|
-| `[.your-class]`    | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `.smaller` | 85% font | Dense content slides |
-| `.positive` | Green bold | Good annotations |
--->
+| Class | Effect | Use Case |
+|-------|--------|----------|
+| `.smaller` | 85% font size | Dense content slides |
+| `.scrollable` | Adds scroll to overflow | Long content that can't be split |
+| `.incremental` | Items appear one by one | Step-by-step reveals |
+| `.columns` / `.column` | Multi-column layout | Side-by-side content |
+| `.fragment` | Reveal on click | Staged reveals within a slide |
+| `.notes` | Speaker notes (not shown) | Presenter-only content |
 
 ---
 
@@ -129,5 +124,13 @@ python scripts/quality_score.py Quarto/file.qmd
 
 | Lecture | Beamer | Quarto | Key Content |
 |---------|--------|--------|-------------|
-| 1: [Topic] | `Lecture01_Topic.tex` | `Lecture1_Topic.qmd` | [Brief description] |
-| 2: [Topic] | `Lecture02_Topic.tex` | -- | [Brief description] |
+| 1 | -- | -- | Intro to Marketing Research; Problem Definition & Approach |
+| 2 | -- | -- | Product Development Fundamentals |
+| 3 | -- | -- | Product Concept Test; Research Design |
+| 4 | -- | -- | Exploratory Research Design: Secondary/Syndicated Data, Qualitative |
+| 5 | -- | -- | Descriptive Research Design: Survey & Observation; Measurement & Scaling Fundamentals |
+| 6 | -- | -- | Measurement & Scaling: Comparative/Noncomparative; Questionnaire Design |
+| 7 | -- | -- | Frequency Distribution, Cross-Tabulation, Hypothesis Testing; ANOVA |
+| 8 | -- | -- | Correlation & Regression; Sampling Design & Sample Size |
+| 9 | -- | -- | Fieldwork & Data Preparation; Report Preparation & Presentation |
+| 10 | -- | -- | Causal Research Design: Experimentation; Market Size & Share Analysis |
