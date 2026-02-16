@@ -1,0 +1,101 @@
+% ==============================================================================
+% Beamer Preamble: MKTG5012 Marketing Research — CUHK
+% ==============================================================================
+
+% --- Document class ---
+\documentclass[aspectratio=169, 11pt]{beamer}
+
+% --- Theme ---
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% --- CUHK Institutional Colors ---
+\definecolor{cuhkpurple}{HTML}{6B2D8B}
+\definecolor{cuhkgold}{HTML}{EDAB56}
+\definecolor{darkgray}{HTML}{3D3D3D}
+\definecolor{positive}{HTML}{15803d}
+\definecolor{negative}{HTML}{b91c1c}
+\definecolor{lightbg}{HTML}{F5F0FA}
+
+% --- Apply CUHK colors to theme ---
+\setbeamercolor{structure}{fg=cuhkpurple}
+\setbeamercolor{palette primary}{bg=cuhkpurple, fg=white}
+\setbeamercolor{palette secondary}{bg=cuhkgold, fg=darkgray}
+\setbeamercolor{palette tertiary}{bg=darkgray, fg=white}
+\setbeamercolor{frametitle}{bg=cuhkpurple, fg=white}
+\setbeamercolor{title}{fg=white, bg=cuhkpurple}
+\setbeamercolor{subtitle}{fg=cuhkgold}
+\setbeamercolor{block title}{bg=cuhkpurple, fg=white}
+\setbeamercolor{block body}{bg=lightbg, fg=darkgray}
+\setbeamercolor{block title alerted}{bg=negative, fg=white}
+\setbeamercolor{block body alerted}{bg=negative!10, fg=darkgray}
+\setbeamercolor{block title example}{bg=positive, fg=white}
+\setbeamercolor{block body example}{bg=positive!10, fg=darkgray}
+\setbeamercolor{item}{fg=cuhkpurple}
+\setbeamercolor{footline}{fg=darkgray}
+
+% --- Fonts ---
+\usepackage{fontspec}
+\setsansfont{Helvetica Neue}[
+  BoldFont = {Helvetica Neue Bold},
+  ItalicFont = {Helvetica Neue Italic}
+]
+\setmonofont{Menlo}[Scale=0.85]
+
+% --- Packages ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning, fit, calc}
+\usepackage{hyperref}
+\usepackage{xeCJK}
+\setCJKmainfont{PingFang SC}
+
+% --- Bibliography ---
+\usepackage[style=authoryear, backend=biber, maxcitenames=2]{biblatex}
+\addbibresource{Bibliography_base.bib}
+
+% --- Footer ---
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1ex,left]{footline}%
+      \hspace*{2ex}\footnotesize MKTG5012 Marketing Research
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.5ex,dp=1ex,center]{footline}%
+      \footnotesize CUHK Business School
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1ex,right]{footline}%
+      \footnotesize \insertframenumber/\inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% --- Custom commands ---
+\newcommand{\cmark}{\textcolor{positive}{\checkmark}}
+\newcommand{\xmark}{\textcolor{negative}{$\times$}}
+\newcommand{\source}[1]{\vfill\hfill{\scriptsize\textcolor{gray}{#1}}}
+\newcommand{\rcode}[1]{\texttt{\textcolor{cuhkpurple}{#1}}}
+\newcommand{\highlight}[1]{\textcolor{cuhkpurple}{\textbf{#1}}}
+
+% --- Code listing style ---
+\usepackage{listings}
+\lstset{
+  language=R,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{cuhkpurple}\bfseries,
+  stringstyle=\color{positive},
+  commentstyle=\color{gray}\itshape,
+  numbers=none,
+  frame=single,
+  rulecolor=\color{cuhkpurple!30},
+  backgroundcolor=\color{lightbg},
+  breaklines=true,
+  showstringspaces=false,
+  columns=fullflexible,
+  literate={<-}{{$\leftarrow$}}2
+}

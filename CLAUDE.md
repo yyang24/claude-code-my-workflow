@@ -124,7 +124,7 @@ python scripts/quality_score.py Quarto/file.qmd
 
 | Lecture | Beamer | Quarto | Key Content |
 |---------|--------|--------|-------------|
-| 1 | -- | -- | Intro to Marketing Research; Problem Definition & Approach |
+| 1 | `Lecture01_Intro_Problem.tex` | -- | Intro to Marketing Research; Problem Definition & Approach |
 | 2 | -- | -- | Product Development Fundamentals |
 | 3 | -- | -- | Product Concept Test; Research Design |
 | 4 | -- | -- | Exploratory Research Design: Secondary/Syndicated Data, Qualitative |
